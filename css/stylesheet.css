@@ -1,4 +1,6 @@
 /*********************
+ONLINE REGISTRATION FORM
+
 By: Brent Suggs 
 February 1 2016 
 *********************/ 
@@ -22,9 +24,9 @@ body {
 .main-header,
 .intro,
 footer {
-    text-align: center; 
-    
+    text-align: center;   
 }
+
 
 /**********************
     HEADER
@@ -60,7 +62,7 @@ footer {
 
 .intro p {
     font-size: .80em;
-    color: #888; 
+    color: #888;
     margin-top: 0;
 }
 
@@ -85,5 +87,40 @@ fieldset:first-child {
 fieldset legend {
     font-weight: 700; 
     font-size: 1.2em;
-    padding:
+    padding: 1em 0;
+}
+
+label, 
+input {
+    color: rgb(84,104,122);
+}
+
+label, 
+input, 
+select {
+    display: inline-block;
+    margin-bottom: 7px;
+    font-size: .85em
+}
+
+
+.contact-info input:not([id="zip"]),
+.contact-info select {
+    width: 100%;
+}
+
+.contact-info input,
+.contact-info select {
+    border-radius: 3px;
+    height: 3em;
+    background-color: rgb(239,240,241);
+    box-shadow: none !important; 
+    border: solid 1px .4 #333; 
+}
+
+.contact-info input:foucs, 
+.contact-info select:focus {
+    border: solid 1px rgb(84,104,122);
+; 
+
 }
