@@ -6,7 +6,9 @@ February 1 2016
 *********************/ 
 
 * {
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;    
 }
 
 body {
@@ -18,6 +20,7 @@ body {
 
 .wrap {
     width: 90%;
+    max-width: 980px; 
     margin: 0 auto;
 }
 
@@ -87,7 +90,7 @@ fieldset:first-child {
 fieldset legend {
     font-weight: 700; 
     font-size: 1.2em;
-    padding: .5em 0;
+    padding: .75em 0;
 }
 
 input,
@@ -100,17 +103,12 @@ textarea {
     outline: 0; 
 }
 
-input:focus,
-select:focus,
-textarea:focus {
-    border: solid 2px rgb(70,105,139);
-
-}
-
 label, 
-input {
+input,
+textarea {
     color: rgb(84,104,122);
 }
+
 
 label, 
 input, 
@@ -120,12 +118,34 @@ select {
     font-size: .85em
 }
 
-textarea {
-    height: 5em;
+input:focus,
+select:focus,
+textarea:focus {
+    border: solid 2px rgb(70,105,139);
+
 }
 
+input::placeholder,
+input::-webkit-input-placeholder, 
+input::-moz-placeholder, 
+input:-ms-input-placeholder,
+input:-moz-placeholder {
+    text-align: right;
+}
 
-.contact-info input:not([id="zip"]),
+input[id="name"]:required::after,
+input[id="email"]:required::after {
+    content="Required"
+    color: red;
+    
+}
+
+textarea {
+    height: 7em;
+}
+
+.contact-info label,
+.contact-info input,
 .contact-info select,
 textarea,
 button{
@@ -133,28 +153,30 @@ button{
 
 }
 
-#zip {
-    width: 50%; 
-}
-
 .contact-info input,
-.contact-info select,
-button{
+.contact-info select{
     height: 3em;
 }
 
 .radio-header {
     display: inline-block;
+    width: 100%; 
     margin-top: 5px;
     margin-bottom: 10px; 
+    margin-right: auto; 
 }
 
+input[id="zip"] {
+    width: 50%;
+}
 
 button[type="submit"] {
     border-radius: 3px;
     border: none;
     background-color: rgb(78,187,181);
     color: rgb(255,255,255);
+    height: 4em;
+    margin-top: 5px; 
     
 }
 
@@ -165,7 +187,23 @@ button[type="submit"] {
 
 footer {
     color: #888;
+    font-size: 15px;
     font-weight: 300;
     font-style: italic;
     padding-top: 1em;
+    padding-bottom: 3em;
+}
+
+@media screen and (min-width: 768px) {
+    
+    .contact-info label {
+        width: 20%; 
+        margin-right: -6px;
+        
+    }
+    
+    .contact-info input,
+    .contact-info select {
+        width: 80%;
+    }
 }
