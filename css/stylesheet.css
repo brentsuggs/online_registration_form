@@ -108,14 +108,18 @@ textarea {
     outline: 0; 
 }
 
-label, 
-input,
-textarea {
+label {
     color: rgb(84,104,122);
-    -webkit-transition: border 1s ease-in;
-    -moz-transition: border 1s ease-in;
-    -o-transition: border 1s ease-in;
-    transition: border 1s ease-in;
+}
+
+input,
+select,
+textarea {
+    color: #888;  
+    -webkit-transition: border .5s ease-in;
+    -moz-transition: border .5s ease-in;
+    -o-transition: border .5s ease-in;
+    transition: border .5s ease-in;
 }
 
 
@@ -133,16 +137,10 @@ textarea:focus {
     border: solid 2px rgb(70,105,139);
 }
 
-input::placeholder,
-input::-webkit-input-placeholder, 
-input::-moz-placeholder, 
-input:-ms-input-placeholder,
-input:-moz-placeholder {
-    text-align: right;
-}
 
 textarea {
     height: 7em;
+    padding: 10px; 
 }
 
 .contact-info label,
@@ -159,8 +157,10 @@ button{
     height: 3em;
 }
 
-select option {
-    color: #888;    
+input,
+select,
+textarea {
+  
 }
 
 .radio-header {
@@ -170,7 +170,7 @@ select option {
     margin-right: auto; 
 }
 
-input[id="zip"] {
+input[id="userZip"] {
     width: 50%;
 }
 
@@ -211,7 +211,7 @@ footer {
         width: 80%;
     }
     
-    input[id="zip"] {
+    input[id="userZip"] {
     width: 40%;
 }
 }
